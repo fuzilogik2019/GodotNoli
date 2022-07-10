@@ -1,40 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://addons/GameTemplate/Assets/Fonts/pixellocale_16.tres" type="DynamicFont" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Levels/player.gd" type="Script" id=4]
+[ext_resource path="res://TileMap/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Light/Light.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Switch/Switch.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 Next_Scene = "res://MainMenu/MainMenu.tscn"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -129.0
+margin_top = -6.0
+margin_right = 418.0
+margin_bottom = 180.0
+color = Color( 0, 0, 0, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.662745, 1, 0.537255, 1 )
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 0, -1 )
+color = Color( 0, 0, 0, 1 )
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -53.0
-margin_top = -21.0
-margin_right = 55.0
-margin_bottom = 19.0
-custom_fonts/font = ExtResource( 2 )
-text = "GO BACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Switch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 263, 88 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 156.129, 131.574 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="Light" parent="." groups=["lights"] instance=ExtResource( 3 )]
+position = Vector2( 167, 24 )
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
+[node name="Light2" parent="." groups=["lights"] instance=ExtResource( 3 )]
+position = Vector2( 234, 24 )
+
+[node name="Light3" parent="." groups=["lights"] instance=ExtResource( 3 )]
+position = Vector2( 95, 24 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 1, 393218, 0, 1, 393219, 0, 1, 393220, 0, 1, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 1, 393225, 0, 1, 393226, 0, 1, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 393234, 0, 1, 393235, 0, 1, 393236, 0, 1, 393237, 0, 2, 458752, 0, 131072, 458753, 0, 131073, 458754, 0, 131073, 458755, 0, 131073, 458756, 0, 131073, 458757, 0, 131073, 458758, 0, 131073, 458759, 0, 131073, 458760, 0, 131073, 458761, 0, 131073, 458762, 0, 131073, 458763, 0, 131073, 458764, 0, 131073, 458765, 0, 131073, 458766, 0, 131073, 458767, 0, 131073, 458768, 0, 131073, 458769, 0, 131073, 458770, 0, 131073, 458771, 0, 131073, 458772, 0, 131073, 458773, 0, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 22, 83 )
