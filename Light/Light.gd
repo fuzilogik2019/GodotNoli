@@ -11,5 +11,5 @@ func _ready():
 	pass
 
 
-func turn_off():
-	$Light2D.set_enabled(false)
+func toggle():
+	$Light2D.set_enabled(!$Light2D.is_enabled())

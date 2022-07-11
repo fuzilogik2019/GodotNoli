@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const WALK_FORCE = 300
-const WALK_MAX_SPEED = 100
+const WALK_FORCE = 200
+const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
-const JUMP_SPEED = 100
+const JUMP_SPEED = 80
 
 var velocity = Vector2()
 
@@ -16,11 +16,17 @@ func _physics_process(delta):
 	if abs(walk) < WALK_FORCE * 0.2:
 		# The velocity, slowed down a bit, and then reassigned.
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		$AnimatedSprite.play("idle")
 	else:
 		velocity.x += walk * delta
+		$AnimatedSprite.play("run")
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
-
+	if velocity.x < 0:
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
+		
 	# Vertical movement code. Apply gravity.
 	velocity.y += gravity * delta
 
@@ -30,3 +36,6 @@ func _physics_process(delta):
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed("Jump"):
 		velocity.y = -JUMP_SPEED
+		$AnimatedSprite.play("raise")
+	elif !is_on_floor() and velocity.y > 0:
+		$AnimatedSprite.play("fall")
