@@ -9,7 +9,7 @@
 content_margin_left = 16.0
 content_margin_top = 0.0
 content_margin_bottom = 2.0
-bg_color = Color( 0.227451, 0.266667, 0.4, 1 )
+bg_color = Color( 0.368627, 0.368627, 0.368627, 1 )
 corner_detail = 1
 anti_aliasing = false
 
@@ -46,20 +46,18 @@ size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Button"
 
-[node name="RemoveAction" type="Button" parent="." groups=[
-"ContainerFocus",
-]]
+[node name="RemoveAction" type="Button" parent="." groups=["ContainerFocus"]]
 margin_left = 298.0
 margin_right = 310.0
 margin_bottom = 20.0
 hint_tooltip = "Remove control bind"
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/disabled = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "-"
