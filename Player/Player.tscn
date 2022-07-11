@@ -65,3 +65,9 @@ shape = SubResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "raise"
+
+[node name="FlarePosition" type="Position2D" parent="."]
+position = Vector2( 6, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
