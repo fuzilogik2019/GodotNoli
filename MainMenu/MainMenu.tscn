@@ -33,20 +33,20 @@ margin_right = 304.0
 margin_bottom = 164.0
 size_flags_vertical = 3
 
-[node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
+[node name="CenterTitle" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
 margin_right = 288.0
-margin_bottom = 64.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
 
-[node name="Logo" type="TextureRect" parent="BG/MarginContainer/VBoxMain/CenterLogo"]
-margin_left = 112.0
-margin_right = 176.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture = ExtResource( 2 )
-expand = true
+[node name="Label" type="Label" parent="BG/MarginContainer/VBoxMain/CenterTitle"]
+margin_left = 101.0
+margin_top = 13.0
+margin_right = 186.0
+margin_bottom = 27.0
+text = "GAME'S TITLE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_top = 68.0
+margin_top = 44.0
 margin_right = 288.0
 margin_bottom = 148.0
 size_flags_horizontal = 3
@@ -54,7 +54,7 @@ size_flags_vertical = 3
 
 [node name="ButtonContainer" type="VBoxContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_right = 51.0
-margin_bottom = 80.0
+margin_bottom = 104.0
 size_flags_vertical = 3
 custom_constants/separation = 1
 
@@ -74,12 +74,23 @@ margin_right = 51.0
 margin_bottom = 59.0
 text = "Exit"
 
-[node name="RightMargin" type="Control" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
+[node name="Padding" type="CenterContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_left = 55.0
-margin_right = 288.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 105.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
+margin_left = 109.0
+margin_right = 173.0
+margin_bottom = 64.0
+
+[node name="Logo" type="TextureRect" parent="BG/MarginContainer/VBoxMain/HBoxContainer/CenterLogo"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 2 )
+expand = true
 
 [connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/Options" to="." method="_on_Options_pressed"]
