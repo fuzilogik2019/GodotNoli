@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="GodotWildJam47"
 run/main_scene="res://MainMenu/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://icon-v2.png"
 
 [audio]
 
