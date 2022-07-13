@@ -12,10 +12,10 @@ script = ExtResource( 1 )
 Next_Scene = "res://MainMenu/MainMenu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -129.0
-margin_top = -6.0
-margin_right = 418.0
-margin_bottom = 180.0
+margin_left = -174.0
+margin_top = -102.0
+margin_right = 500.0
+margin_bottom = 224.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

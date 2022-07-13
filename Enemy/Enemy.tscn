@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy/enemy.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Light/star_05.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/light_03.png" type="Texture" id=3]
+[ext_resource path="res://Enemy/star_01.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.0
@@ -16,6 +17,8 @@ animations = [ {
 } ]
 
 [node name="Enemy" type="KinematicBody2D" groups=["lights"]]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,6 +27,15 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -2 )
 frames = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 0.67451, 0.368627, 0.368627, 1 )
+amount = 15
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 25.0
+gravity = Vector2( 0, 0 )
+scale_amount = 0.01
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 3 )

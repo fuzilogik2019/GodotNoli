@@ -9,7 +9,6 @@ var velocity = Vector2()
 
 func _ready():
 	visible = false
-	pass
 
 func toggle():
 	lights_on = not lights_on
@@ -36,5 +35,5 @@ func _process(_delta):
 	else:
 		velocity = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	position += velocity * 0.4 # Para que no haya colision

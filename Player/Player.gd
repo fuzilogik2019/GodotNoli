@@ -49,3 +49,6 @@ func _physics_process(delta):
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
+	
+	if Input.is_action_just_pressed("Interact") and self:
+		get_tree().call_group("lights", "toggle")
