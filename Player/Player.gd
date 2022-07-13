@@ -5,6 +5,9 @@ const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
 const JUMP_SPEED = 80
 
+onready var flareScene : PackedScene = load ("res://Flare/Flare.tscn")
+onready var flare : RigidBody2D
+
 var velocity = Vector2()
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -39,3 +42,10 @@ func _physics_process(delta):
 		$AnimatedSprite.play("raise")
 	elif !is_on_floor() and velocity.y > 0:
 		$AnimatedSprite.play("fall")
+	
+	if Input.is_action_just_pressed('Flare'):
+		flare = flareScene.instance()
+	elif Input.is_action_just_released("Flare"):
+		flare.set_position($FlarePosition.get_global_position())
+		self.get_tree().get_current_scene().add_child(flare)
+		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
