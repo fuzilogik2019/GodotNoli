@@ -4,8 +4,7 @@ const WALK_FORCE = 200
 const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
 const JUMP_SPEED = 80
-const MIN_POWER = 5
-const MIN_POWER = 5
+const MAX_POWER = 100
 
 onready var flareScene : PackedScene = load ("res://Flare/Flare.tscn")
 onready var flare : RigidBody2D
@@ -55,4 +54,4 @@ func _physics_process(delta):
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		var direction : Vector2 = get_local_mouse_position() * power
-		flare.apply_impulse(Vector2.ZERO,direction)
+		flare.apply_impulse(Vector2.ZERO,direction.clamped(MAX_POWER))
