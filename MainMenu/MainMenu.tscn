@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://icon-v2.png" type="Texture" id=2]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/pixellocale_8.tres" type="DynamicFont" id=4]
+[ext_resource path="res://icon-v1.png" type="Texture" id=5]
+[ext_resource path="res://icon-v3.png" type="Texture" id=6]
+[ext_resource path="res://icon-v4.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="MainMenu" type="CanvasLayer"]
 layer = 0
@@ -17,9 +21,6 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="BG"]
 anchor_right = 1.0
@@ -32,30 +33,34 @@ custom_constants/margin_bottom = 16
 [node name="VBoxMain" type="VBoxContainer" parent="BG/MarginContainer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 304.0
-margin_bottom = 164.0
+margin_right = 317.0
+margin_bottom = 182.0
 size_flags_vertical = 3
 
-[node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_right = 288.0
-margin_bottom = 64.0
+[node name="CenterTitle" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
+margin_right = 301.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
 
-[node name="Logo" type="TextureRect" parent="BG/MarginContainer/VBoxMain/CenterLogo"]
+[node name="Title" type="Label" parent="BG/MarginContainer/VBoxMain/CenterTitle"]
 margin_left = 112.0
-margin_right = 176.0
-margin_bottom = 64.0
-texture = ExtResource( 2 )
+margin_top = 11.0
+margin_right = 188.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 4 )
+text = "GAME'S TITLE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
-margin_top = 68.0
-margin_right = 288.0
-margin_bottom = 148.0
+margin_top = 44.0
+margin_right = 301.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonContainer" type="VBoxContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_right = 51.0
-margin_bottom = 80.0
+margin_bottom = 100.0
 size_flags_vertical = 3
 custom_constants/separation = 1
 
@@ -75,12 +80,71 @@ margin_right = 51.0
 margin_bottom = 59.0
 text = "Exit"
 
-[node name="RightMargin" type="Control" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
+[node name="Padding" type="CenterContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
 margin_left = 55.0
-margin_right = 288.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 105.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
+margin_left = 109.0
+margin_right = 237.0
+margin_bottom = 100.0
+
+[node name="Logo-v1" type="TextureRect" parent="BG/MarginContainer/VBoxMain/HBoxContainer/CenterLogo"]
+visible = false
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Logo-v2" type="TextureRect" parent="BG/MarginContainer/VBoxMain/HBoxContainer/CenterLogo"]
+visible = false
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Logo-v3" type="TextureRect" parent="BG/MarginContainer/VBoxMain/HBoxContainer/CenterLogo"]
+visible = false
+margin_left = 32.0
+margin_top = 26.0
+margin_right = 96.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 64, 48 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Logo-v4" type="TextureRect" parent="BG/MarginContainer/VBoxMain/HBoxContainer/CenterLogo"]
+margin_top = 26.0
+margin_right = 128.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 128, 48 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
+margin_top = 148.0
+margin_right = 301.0
+margin_bottom = 166.0
+
+[node name="Padding" type="CenterContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer2"]
+margin_right = 115.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 115, 0 )
+
+[node name="MadeBy" type="Label" parent="BG/MarginContainer/VBoxMain/HBoxContainer2"]
+margin_left = 119.0
+margin_right = 301.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 4 )
+text = "Made by @agustinoli and @tsarquis"
 
 [connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer/Options" to="." method="_on_Options_pressed"]

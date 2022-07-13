@@ -29,9 +29,6 @@ axis_stretch_vertical = 2
 [node name="Master" type="VBoxContainer"]
 margin_right = 47.0
 margin_bottom = 32.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScaleName" type="Label" parent="."]
 margin_right = 47.0
