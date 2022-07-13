@@ -2,20 +2,22 @@ extends KinematicBody2D
 
 const WALK_SPEED = 1
 
-onready var lights_on = false
+onready var lights_on = true
 
 var player_pos = Vector2()
 var velocity = Vector2()
 
 func _ready():
-	visible = true
+	visible = false
 	pass
 
 func toggle():
 	lights_on = not lights_on
 
 func _process(_delta):
-	if lights_on:
+	visible = not lights_on
+	
+	if not lights_on:
 		player_pos = get_node('../Player').position
 		
 		if position.x < player_pos.x:
