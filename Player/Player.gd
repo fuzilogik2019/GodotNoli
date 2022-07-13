@@ -4,6 +4,9 @@ const WALK_FORCE = 200
 const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
 const JUMP_SPEED = 80
+const INITIAL_FLARES = 3
+onready var flares = INITIAL_FLARES
+onready var on_switch_area : bool = false
 
 onready var flareScene : PackedScene = load ("res://Flare/Flare.tscn")
 onready var flare : RigidBody2D
@@ -43,12 +46,11 @@ func _physics_process(delta):
 	elif !is_on_floor() and velocity.y > 0:
 		$AnimatedSprite.play("fall")
 	
-	if Input.is_action_just_pressed('Flare'):
+	if Input.is_action_just_released("Flare") and flares > 0:
 		flare = flareScene.instance()
-	elif Input.is_action_just_released("Flare"):
+		flares -= 1
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
-	
-	if Input.is_action_just_pressed("Interact") and self:
+	if Input.is_action_just_pressed("Interact") and on_switch_area:		
 		get_tree().call_group("lights", "toggle")
