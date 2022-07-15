@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export (String, FILE, "*.tscn") var First_Level: String
+export (String, FILE, "*.tscn") var Init_Game: String
 
 func _ready()->void:
 	get_tree().get_nodes_in_group("MainMenu")[0].grab_focus()					#Godot doesn't have buttons auto grab_focus when noone has focus
@@ -18,7 +18,7 @@ func on_options(value:bool)->void:
 
 func _on_NewGame_pressed()->void:
 	Game.emit_signal("NewGame")
-	Game.emit_signal("ChangeScene", First_Level)
+	Game.emit_signal("ChangeScene", Init_Game)
 
 func _on_Options_pressed()->void:
 	MenuEvent.Options = true
