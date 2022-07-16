@@ -1,16 +1,41 @@
 extends KinematicBody2D
+class_name Player
 
 const WALK_FORCE = 200
 const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
 const JUMP_SPEED = 80
-
+const INITIAL_FLARES = 3
+export var dead_time = 3
+onready var flares = INITIAL_FLARES
+onready var on_switch_area : bool = false
+onready var lights : bool = true
 onready var flareScene : PackedScene = load ("res://Flare/Flare.tscn")
 onready var flare : RigidBody2D
 
 var velocity = Vector2()
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
+func die():
+	self.set_physics_process(false)
+	visible = false
+#	SfxManager.play("")
+	$Tween.interpolate_property($Camera2D, "zoom",
+		$Camera2D.get_zoom(), Vector2(0.2,0.2), dead_time,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	var t = Timer.new()
+	t.set_wait_time(dead_time+dead_time/3)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	Game.emit_signal("Restart")
+
+
+
 
 func _physics_process(delta):
 	# Horizontal movement code. First, get the player's input.
@@ -43,9 +68,12 @@ func _physics_process(delta):
 	elif !is_on_floor() and velocity.y > 0:
 		$AnimatedSprite.play("fall")
 	
-	if Input.is_action_just_pressed('Flare'):
+	if Input.is_action_just_released("Flare") and flares > 0:
 		flare = flareScene.instance()
-	elif Input.is_action_just_released("Flare"):
+		flares -= 1
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
+	if Input.is_action_just_pressed("Interact") and on_switch_area:		
+		lights = false
+		get_tree().call_group("lights", "toggle")

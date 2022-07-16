@@ -38,4 +38,5 @@ shape = SubResource( 4 )
 frames = SubResource( 2 )
 animation = "on"
 
-[connection signal="body_shape_entered" from="." to="." method="_on_AnimatedSprite_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_AnimatedSprite_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_AnimatedSprite_body_exited"]
