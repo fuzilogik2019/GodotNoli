@@ -73,6 +73,10 @@ window/stretch/aspect="keep_height"
 
 enabled=PoolStringArray( "GameTemplate" )
 
+[global]
+
+locale=false
+
 [importer_defaults]
 
 texture={
