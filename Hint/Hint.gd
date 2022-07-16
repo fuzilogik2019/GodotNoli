@@ -40,7 +40,6 @@ func _on_Hint_body_shape_entered(_body_rid, body, _body_shape_index, _local_shap
 		$Key.set_visible(true)
 		$CPUParticles2D.set_emitting(false)
 		$Timer.start()
-		
 
 
 func _on_Timer_timeout():
