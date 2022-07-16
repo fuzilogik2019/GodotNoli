@@ -34,6 +34,8 @@ _global_script_class_icons={
 
 config/name="GodotWildJam47"
 run/main_scene="res://MainMenu/MainMenu.tscn"
+boot_splash/image="res://GWJ-Logo.png"
+boot_splash/bg_color=Color( 0.0784314, 0.133333, 0.25098, 1 )
 config/icon="res://icon-v2.png"
 
 [audio]
