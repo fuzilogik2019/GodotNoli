@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://TileMap/tileset.tres" type="TileSet" id=2]
@@ -6,16 +6,17 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Switch/Switch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Bed/Bed.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 Next_Scene = "res://MainMenu/MainMenu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -129.0
-margin_top = -6.0
-margin_right = 418.0
-margin_bottom = 180.0
+margin_left = -174.0
+margin_top = -102.0
+margin_right = 500.0
+margin_bottom = 224.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -42,6 +43,9 @@ tile_data = PoolIntArray( -65539, 0, 0, -65538, 0, 1, -65537, 0, 1, -131072, 0, 
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 23, 85 )
+
+[node name="Bed" parent="." instance=ExtResource( 7 )]
+position = Vector2( -6, 90 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 278, 17 )
