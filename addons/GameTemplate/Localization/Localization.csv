@@ -33,8 +33,10 @@ CANCEL,Cancel,Cancelar,Annuler
 LANGUAGES,Languages,Idiomas,Langues
 START1,"Oh, I need to rest right now...",Necesito descansar ahora,
 START2,I'm going to sleep.,Me voy a dormir,
-START3,Zzz... Zzz... Zzz...,Zzz... Zzz... Zzz...,
-START4,"Aaaargh, fricking lights!","Aaaargh, malditas luces!",
+START3,Zzz... Zzz... Zzz...,Zzz... Zzz... Zzz...,Zzz... Zzz... Zzz...
+START4,"Aaaargh, fricking lights!","Aaaargh, malditas luces!","Aaaargh, les luminieres!"
 START5,I forgot to shut them down.\nI'll do so.,Olvide apagarlas. Lo hare ahora.,
-START6,...,…,
-START7,I'm not scared of the darkness.\nAm I?,No le tengo miedo a la oscuridad. O si?,
+START6,...,…,…
+START7,I'm not scared of the darkness.\nAm I?,No le tengo miedo a la oscuridad.\n O si?,
+HINT1,Press to drop a flare,Presiona para dejar una bengala,
+HINT2,Press to turn the light off,Presiona para apagar las luces,
