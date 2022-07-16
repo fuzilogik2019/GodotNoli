@@ -1,0 +1,40 @@
+id,en,es,fr
+Right,Right,Derecha,À droite
+Left,Left,Izquierda,À gauche
+Up,Up,Arriba,En haut
+Down,Down,Abajo,En bas
+Jump,Jump,Saltar,Sauter
+Shoot,Shoot,Disparar,Tirer
+NEW_GAME,New game,Nuevo juego,Nouveau jeu
+CONTINUE,Continue,Continuar,Continuer
+RESUME,Resume,Reanudar,Reprendre
+RESTART,Restart,Reiniciar,Redémarrer
+OPTIONS,Options,Opciones,Options
+MAIN_MENU,Main Menu,Menú principal,Menu principal
+BACK,Back,Atrás,Retour
+EXIT,Exit,Salir,Sortie
+PAUSE,Pause,Pausa,Pause
+LOADING,Loading,Cargando,Chargement
+RESOLUTION,Resolution,Resolución,Résolution
+FULLSCREEN,Fullscreen window,Pantalla completa,Plein écran
+BORDERLESS,Borderless window,Pantalla sin bordes,Sans bordure
+SCALE,Scale,Escalado,Échelle
+VOLUME,Volume,Volumen,Volume
+MASTER,Master,General,Principal
+MUSIC,Music,Música,Musique
+SFX,Sounds,Efectos de Sonido,Effet sonore
+CONTROLS,Controls,Controles,Controles
+ACTIONS,Actions,Acciones,Actions
+KEYBOARD,Keyboard,Teclado,Clavier
+GAMEPAD,Gamepad,Gamepad,Gamepad
+DEFAULT,Default,Defecto,Défaut
+USE_NEW_CONTROLS,Use new control!,Usar nuevos controles!,Utilisez un nouveau contrôle!
+CANCEL,Cancel,Cancelar,Annuler
+LANGUAGES,Languages,Idiomas,Langues
+START1,"Oh, I need to rest right now...",Necesito descansar ahora,
+START2,I'm going to sleep.,Me voy a dormir,
+START3,Zzz... Zzz... Zzz...,Zzz... Zzz... Zzz...,
+START4,"Aaaargh, fricking lights!","Aaaargh, malditas luces!",
+START5,I forgot to shut them down.\nI'll do so.,Olvide apagarlas. Lo hare ahora.,
+START6,...,…,
+START7,I'm not scared of the darkness.\nAm I?,No le tengo miedo a la oscuridad. O si?,

@@ -14,7 +14,7 @@ bg_color = Color( 0, 0, 0, 1 )
 [node name="MainMenu" type="CanvasLayer"]
 layer = 0
 script = ExtResource( 3 )
-First_Level = "res://Levels/TestScene.tscn"
+Init_Game = "res://InitGame/InitGame.tscn"
 
 [node name="BG" type="Panel" parent="."]
 pause_mode = 2

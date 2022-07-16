@@ -79,6 +79,10 @@ window/stretch/aspect="keep_height"
 
 enabled=PoolStringArray( "GameTemplate" )
 
+[global]
+
+locale=false
+
 [importer_defaults]
 
 texture={
@@ -195,7 +199,7 @@ Flare={
 [locale]
 
 test="en"
-translations=PoolStringArray(  )
+translations=PoolStringArray( "res://addons/GameTemplate/Localization/Localization.de.translation", "res://addons/GameTemplate/Localization/Localization.en.translation", "res://addons/GameTemplate/Localization/Localization.es.translation", "res://addons/GameTemplate/Localization/Localization.fr.translation", "res://addons/GameTemplate/Localization/Localization.it.translation", "res://addons/GameTemplate/Localization/Localization.lv.translation", "res://addons/GameTemplate/Localization/Localization.pt_BR.translation", "res://addons/GameTemplate/Localization/Localization.ru.translation", "res://addons/GameTemplate/Localization/Localization.sv_SE.translation", "res://addons/GameTemplate/Localization/Localization.tr.translation" )
 
 [rendering]
 
