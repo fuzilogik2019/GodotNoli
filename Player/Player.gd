@@ -18,10 +18,15 @@ var velocity = Vector2()
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
+func _ready():
+	SfxManager.load_samples(["res://Assets/Sounds/dead.wav",
+		"res://Assets/Sounds/lights.wav","res://Assets/Sounds/jump.wav",
+		"res://Assets/Sounds/flare.wav","res://Assets/Sounds/won.wav",])
+
 func die():
 	self.set_physics_process(false)
 	visible = false
-#	SfxManager.play("")
+	SfxManager.play("dead")
 	$Tween.interpolate_property($Camera2D, "zoom",
 		$Camera2D.get_zoom(), Vector2(0.2,0.2), dead_time,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
@@ -63,6 +68,7 @@ func _physics_process(delta):
 
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed("Jump"):
+		SfxManager.play("jump")
 		velocity.y = -JUMP_SPEED
 		$AnimatedSprite.play("raise")
 	elif !is_on_floor() and velocity.y > 0:
@@ -70,10 +76,12 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_released("Flare") and flares > 0:
 		flare = flareScene.instance()
+		SfxManager.play("flare")
 		flares -= 1
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
 	if Input.is_action_just_pressed("Interact") and on_switch_area:		
 		lights = false
+		SfxManager.play("lights")
 		get_tree().call_group("lights", "toggle")
