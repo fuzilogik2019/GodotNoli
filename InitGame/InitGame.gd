@@ -20,7 +20,7 @@ func next_msg():
 	$Timer.stop()
 	$Timer.start(10)
 	if msg_index >= msgs.size() -1:
-		Game.emit_signal("ChangeScene","res://Levels/TestScene.tscn")
+		Game.emit_signal("ChangeScene","res://Levels/Level1.tscn")
 	else:
 		msg_index += 1
 		$Message.text = tr(msgs[msg_index])

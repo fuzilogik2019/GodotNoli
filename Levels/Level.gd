@@ -8,8 +8,10 @@ func _ready()->void:
 
 func _on_Button_pressed()->void:
 	PauseMenu.can_show = false
-	Game.emit_signal("ChangeScene", Next_Scene)
 
 func _exit_tree()->void:
 	Hud.visible = false
 	PauseMenu.can_show = false
+
+func next_scene():
+	Game.emit_signal("ChangeScene",Next_Scene)
