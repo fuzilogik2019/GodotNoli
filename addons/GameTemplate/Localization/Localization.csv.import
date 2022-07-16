@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://addons/GameTemplate/Localization/Localization.en.translation", "res://addons/GameTemplate/Localization/Localization.es.translation", "res://addons/GameTemplate/Localization/Localization.fr.translation" ]
+
+source_file="res://addons/GameTemplate/Localization/Localization.csv"
+dest_files=[ "res://addons/GameTemplate/Localization/Localization.en.translation", "res://addons/GameTemplate/Localization/Localization.es.translation", "res://addons/GameTemplate/Localization/Localization.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
