@@ -20,14 +20,16 @@ margin_bottom = 224.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2( 0, -1 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="Switch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 454, 41 )
 
-[node name="Light2" parent="." groups=["lights"] instance=ExtResource( 3 )]
+[node name="Light" parent="." groups=["lights"] instance=ExtResource( 3 )]
+position = Vector2( 553, 24 )
+
+[node name="Light4" parent="." groups=["lights"] instance=ExtResource( 3 )]
 position = Vector2( 264, 24 )
 
 [node name="Light3" parent="." groups=["lights"] instance=ExtResource( 3 )]
@@ -49,4 +51,4 @@ position = Vector2( 23, 85 )
 position = Vector2( -6, 90 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 278, 17 )
+position = Vector2( 280, 15 )
