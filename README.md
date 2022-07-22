@@ -6,6 +6,8 @@ tsarquis and agustinoli entry for the GWJ 47, which theme is SIMMETRY.
 
 ---
 
+Live on: https://agustinoli.itch.io/ruletarusa
+
 Assests from:
 
 Sprites by https://www.kenney.nl/
