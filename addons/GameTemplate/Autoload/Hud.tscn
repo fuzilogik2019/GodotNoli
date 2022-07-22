@@ -6,8 +6,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
-onready var hp: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/HP
-onready var score: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/Score
+onready var flare: = $CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/Flares
 onready var gui: = $CanvasLayer/GUI
 
 var visible: = false setget set_visible
@@ -21,7 +20,7 @@ func set_visible(value: bool)->void:
 
 
 func set_flares_text(amount)-> void:
-	$CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/Flares.set_text(amount)
+	flare.set_text(amount)
 "
 
 [node name="Hud" type="Node"]
