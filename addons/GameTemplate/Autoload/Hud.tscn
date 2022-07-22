@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/pixellocale_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Flare/flare.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -17,6 +18,10 @@ func _ready()->void:
 func set_visible(value: bool)->void:
 	visible = value
 	gui.visible = value
+
+
+func set_flares_text(amount)-> void:
+	$CanvasLayer/GUI/MarginContainer/VBoxContainer/Top/Flares.set_text(amount)
 "
 
 [node name="Hud" type="Node"]
@@ -41,9 +46,6 @@ custom_constants/margin_right = 4
 custom_constants/margin_top = 4
 custom_constants/margin_left = 4
 custom_constants/margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GUI/MarginContainer"]
 margin_left = 4.0
@@ -54,20 +56,19 @@ mouse_filter = 2
 
 [node name="Top" type="HBoxContainer" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer"]
 margin_right = 312.0
-margin_bottom = 34.0
+margin_bottom = 26.0
 mouse_filter = 2
 
-[node name="HP" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
-margin_right = 193.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "HP: 3"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
+margin_right = 16.0
+margin_bottom = 26.0
+texture = ExtResource( 2 )
+stretch_mode = 4
 
-[node name="Score" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
-margin_left = 197.0
-margin_right = 312.0
-margin_bottom = 34.0
+[node name="Flares" type="Label" parent="CanvasLayer/GUI/MarginContainer/VBoxContainer/Top"]
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 26.0
+size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
-text = "Score: 0000"
-align = 2
+text = "3"

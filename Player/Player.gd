@@ -19,6 +19,7 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	$Hud.set_visible(true)
 	SfxManager.load_samples(["res://Assets/Sounds/dead.wav",
 		"res://Assets/Sounds/lights.wav","res://Assets/Sounds/jump.wav",
 		"res://Assets/Sounds/flare.wav","res://Assets/Sounds/won.wav",])
@@ -78,6 +79,7 @@ func _physics_process(delta):
 		flare = flareScene.instance()
 		SfxManager.play("flare")
 		flares -= 1
+		$Hud.set_flares_text(String(flares))
 		flare.set_position($FlarePosition.get_global_position())
 		self.get_tree().get_current_scene().add_child(flare)
 		flare.apply_impulse(Vector2.ZERO,Vector2.ZERO)
