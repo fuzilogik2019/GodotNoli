@@ -26,6 +26,7 @@ jobs:
           relative_project_path: ./
           create_release: true
           use_preset_export_path: true
+          archive_output: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
