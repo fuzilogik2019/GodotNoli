@@ -20,9 +20,6 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$Hud.set_visible(true)
-	SfxManager.load_samples(["res://Assets/Sounds/dead.wav",
-		"res://Assets/Sounds/lights.wav","res://Assets/Sounds/jump.wav",
-		"res://Assets/Sounds/flare.wav","res://Assets/Sounds/won.wav",])
 
 func die():
 	self.set_physics_process(false)
