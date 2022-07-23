@@ -19,7 +19,7 @@ jobs:
 
       # Export for various different platforms as mentioned in export_presets.cfg
       - name: export game
-        uses: firebelley/godot-export@v2.4.0
+        uses: firebelley/godot-export@v4.1.0
         with:
           godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.4.4/Godot_v3.4.4-stable_linux_headless.64.zip
           godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.4.4/Godot_v3.4.4-stable_export_templates.tpz
