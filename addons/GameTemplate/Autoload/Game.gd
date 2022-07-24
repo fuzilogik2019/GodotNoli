@@ -9,6 +9,7 @@ signal Exit			#Triggers closing the game
 
 onready var CurrentScene = null
 var NextScene
+var difficulty
 
 var loader: = ResourceAsyncLoader.new()
 

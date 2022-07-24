@@ -5,9 +5,9 @@ const WALK_FORCE = 200
 const WALK_MAX_SPEED = 70
 const STOP_FORCE = 1300
 const JUMP_SPEED = 80
-const INITIAL_FLARES = 3
+var INITIAL_FLARES : int
 export var dead_time = 3
-onready var flares = INITIAL_FLARES
+onready var flares
 onready var on_switch_area : bool = false
 onready var lights : bool = true
 onready var flareScene : PackedScene = load ("res://Flare/Flare.tscn")
@@ -20,6 +20,14 @@ onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$Hud.set_visible(true)
+	if Game.difficulty == "Easy":
+		INITIAL_FLARES = 10
+	elif Game.difficulty == "Normal":
+		INITIAL_FLARES = 5
+	elif Game.difficulty == "Hard":
+		INITIAL_FLARES = 3
+	$Hud.set_flares_text(String(INITIAL_FLARES))
+	flares = INITIAL_FLARES
 
 func die():
 	self.set_physics_process(false)

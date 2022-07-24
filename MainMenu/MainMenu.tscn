@@ -40,12 +40,12 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 
 [node name="Title" type="Label" parent="BG/MarginContainer/VBoxMain/CenterTitle"]
-margin_left = 112.0
+margin_left = 120.0
 margin_top = 11.0
-margin_right = 188.0
+margin_right = 181.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 4 )
-text = "GAME'S TITLE"
+text = "Ruleta Rusa"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
 margin_top = 44.0

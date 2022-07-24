@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/GameTemplate/GUI/OptionsSections/General.gd" type="Script" id=1]
 [ext_resource path="res://addons/GameTemplate/GUI/OptionsSections/DarkerPanel.tres" type="StyleBox" id=2]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/pixellocale_16.tres" type="DynamicFont" id=3]
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/ToggleButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/TextureButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/GameTemplate/GUI/OptionsSections/DifficultyButtonsGroup.tres" type="ButtonGroup" id=6]
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/OptionsSlider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/GameTemplate/Assets/Fonts/pixellocale_8.tres" type="DynamicFont" id=8]
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=9]
@@ -37,8 +38,8 @@ anchor_bottom = 1.0
 size_flags_vertical = 3
 
 [node name="Resolution" type="Label" parent="HBoxContainer/Panel/VBoxContainer"]
-margin_right = 150.0
-margin_bottom = 34.0
+margin_right = 151.0
+margin_bottom = 26.0
 size_flags_horizontal = 5
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -47,9 +48,9 @@ align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/VBoxContainer"]
 margin_left = 29.0
-margin_top = 38.0
+margin_top = 30.0
 margin_right = 121.0
-margin_bottom = 100.0
+margin_bottom = 92.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -111,6 +112,45 @@ margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Difficulty" type="Label" parent="HBoxContainer/Panel/VBoxContainer"]
+margin_top = 96.0
+margin_right = 151.0
+margin_bottom = 122.0
+size_flags_horizontal = 5
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Difficulty"
+align = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel/VBoxContainer"]
+margin_top = 126.0
+margin_right = 151.0
+margin_bottom = 144.0
+
+[node name="Easy" parent="HBoxContainer/Panel/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_right = 45.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 8 )
+group = ExtResource( 6 )
+text = "Easy"
+
+[node name="Normal" parent="HBoxContainer/Panel/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_left = 49.0
+margin_right = 102.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 8 )
+pressed = true
+group = ExtResource( 6 )
+text = "Normal"
+
+[node name="Hard" parent="HBoxContainer/Panel/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_left = 106.0
+margin_right = 151.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 8 )
+group = ExtResource( 6 )
+text = "Hard"
+
 [node name="Panel2" type="Panel" parent="HBoxContainer"]
 margin_left = 154.0
 margin_right = 304.0
@@ -123,13 +163,10 @@ custom_styles/panel = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Volume" type="Label" parent="HBoxContainer/Panel2/VBoxContainer"]
 margin_right = 150.0
-margin_bottom = 34.0
+margin_bottom = 26.0
 size_flags_horizontal = 5
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -137,9 +174,9 @@ text = "Volume"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panel2/VBoxContainer"]
-margin_top = 38.0
+margin_top = 30.0
 margin_right = 150.0
-margin_bottom = 142.0
+margin_bottom = 134.0
 custom_constants/margin_right = 4
 custom_constants/margin_left = 5
 
@@ -254,6 +291,9 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/HBoxContainer/VBoxContainer/Borderless" to="." method="_on_Borderless_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/ScaleDown" to="." method="_on_ScaleDown_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/ScaleUp" to="." method="_on_ScaleUp_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/VBoxContainer/Easy" to="." method="_on_Easy_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/VBoxContainer/Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/VBoxContainer/Hard" to="." method="_on_Hard_pressed"]
 [connection signal="value_changed" from="HBoxContainer/Panel2/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/Master/HSlider" to="." method="_on_Master_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Panel2/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/Music/HSlider" to="." method="_on_Music_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Panel2/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/SFX/HSlider" to="." method="_on_SFX_value_changed"]

@@ -27,6 +27,7 @@ func _ready()->void:
 	#Localization
 	SettingsLanguage.connect("ReTranslate", self, "retranslate")
 	retranslate()
+	_on_Normal_pressed()
 
 func set_resolution()->void:
 	find_node("Fullscreen").pressed = SettingsResolution.Fullscreen
@@ -111,3 +112,19 @@ func retranslate()->void:
 
 func set_node_in_focus()->void:
 	var FocusGroup:Array = get_groups()
+
+
+func _on_Easy_pressed():
+	Game.difficulty = "Easy"
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Normal.set_pressed(false)
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Hard.set_pressed(false)
+
+func _on_Normal_pressed():
+	Game.difficulty = "Normal"
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Easy.set_pressed(false)
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Hard.set_pressed(false)
+
+func _on_Hard_pressed():
+	Game.difficulty = "Hard"
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Easy.set_pressed(false)
+	$HBoxContainer/Panel/VBoxContainer/VBoxContainer/Normal.set_pressed(false)
